@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "228102642507",
+    "project_id": "capstone-786fe",
+    "storage_bucket": "capstone-786fe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228102642507:android:d6e3cfa59b3b7c884626ce",
+        "android_client_info": {
+          "package_name": "com.example.eyecon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs05sBDKQ0xg4dmQLoOM_90FY0L-em18I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
