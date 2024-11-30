@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -21,24 +24,30 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
 
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
+
         homeViewModel.showusername()
         // Display the username
         homeViewModel.username.observe(viewLifecycleOwner) { username ->
-            binding.textUsername.text = username
+            if (!username.isNullOrEmpty()) {
+                binding.textUsername.text = username
+            } else {
+                binding.textUsername.text = getString(R.string.default_username) // Teks default jika username kosong
+            }
         }
         homeViewModel.showphoto()
         homeViewModel.profilePhotoUrl.observe(viewLifecycleOwner) { photoUrl ->
@@ -54,20 +63,17 @@ class HomeFragment : Fragment() {
                     .into(binding.imageView)
             }
         }
-        binding.textUsername.setOnClickListener {
-            homeViewModel.signOut() // Sign out using the ViewModel
-            val intent = Intent(requireActivity(), LoginActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        }
         binding.imageView.setOnClickListener{
             val intent = Intent(requireActivity(), ProfileActivity::class.java)
             startActivity(intent)
         }
 
 
+
+
         return root
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

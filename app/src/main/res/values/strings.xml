@@ -36,4 +36,7 @@
     <string name="good_day">Good Day,</string>
     <string name="profile">Profile\n</string>
     <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="camera_icon">Camera</string>
+    <string name="default_username">User\n</string>
 </resources>
