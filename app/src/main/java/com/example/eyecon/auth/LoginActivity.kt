@@ -92,7 +92,13 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+                    val user: FirebaseUser? = auth.currentUser
+                    val displayName = user?.displayName ?: "User" // Default ke "User" jika nama tidak tersedia
+
+                    // Tampilkan toast dengan nama pengguna
+                    Toast.makeText(this, "Welcome, $displayName!", Toast.LENGTH_SHORT).show()
+
+//                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                     //Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, BoardingActivity::class.java))
                     finish()
