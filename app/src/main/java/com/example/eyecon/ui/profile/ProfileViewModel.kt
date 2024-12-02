@@ -69,7 +69,4 @@ class ProfileViewModel : ViewModel() {
         _email.value = user?.email ?: "User"
     }
 
-    fun signOut() {
-        auth.signOut()
-    }
 }

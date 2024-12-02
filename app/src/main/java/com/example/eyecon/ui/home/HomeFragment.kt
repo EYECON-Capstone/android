@@ -69,6 +69,22 @@ class HomeFragment : Fragment() {
         }
 
 
+        binding.keluar.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Konfirmasi Keluar")
+                .setMessage("Apakah Anda yakin ingin keluar?")
+                .setPositiveButton("Ya") { _, _ ->
+                    homeViewModel.signOut()
+                    Toast.makeText(requireContext(), "Berhasil keluar", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(requireContext(), LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                    requireActivity().finish()
+                }
+                .setNegativeButton("Batal", null)
+                .show()
+        }
+
 
 
         return root

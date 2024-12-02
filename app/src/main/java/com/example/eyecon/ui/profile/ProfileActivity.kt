@@ -22,10 +22,12 @@ import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.eyecon.MainActivity
 import com.example.eyecon.R
+import com.example.eyecon.auth.LoginActivity
 import com.example.eyecon.databinding.ActivityMainBinding
 import com.example.eyecon.databinding.ActivityProfileBinding
 import com.example.eyecon.ui.CameraActivity
 import com.example.eyecon.ui.CameraActivity.Companion.CAMERAX_RESULT
+import com.example.eyecon.ui.home.HomeFragment
 
 
 class ProfileActivity : AppCompatActivity() {
