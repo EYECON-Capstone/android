@@ -42,15 +42,24 @@ class WelcomeActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            // Pengguna sudah login, langsung buka MainActivity
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()  // Menutup LoginActivity agar tidak bisa kembali
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+
+
+        if (isLoggedIn) {
+            // If the user is logged in, navigate directly to MainActivity
+            navigateToMainActivity()
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val window: Window = window
             window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
         }
+    }
+    private fun navigateToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        startActivity(intent)
+        finish() // Optional: This will close the WelcomeActivity so it doesn't stay in the back stack
     }
 }

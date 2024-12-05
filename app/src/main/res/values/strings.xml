@@ -40,4 +40,12 @@
     <string name="edit">Edit</string>
     <string name="camera_icon">Camera</string>
     <string name="default_username">User\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gallery">Gallery</string>
+    <string name="analyze">Analyze</string>
+    <string name="image">Image</string>
+    <string name="scan">Mulai Scan</string>
+    <string name="result">Result</string>
+    <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
 </resources>

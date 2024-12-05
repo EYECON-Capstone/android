@@ -30,8 +30,4 @@ class HomeViewModel : ViewModel() {
         _profilePhotoUrl.value = user?.photoUrl
     }
 
-
-    fun signOut() {
-        auth.signOut()
-    }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/rvImage"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:background="#D3D3D3"
+        android:contentDescription="@string/image"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_image_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/eyecon_white"
+        android:backgroundTint="@color/dark_green"
+        android:tint="@null"/>
+
+    <TextView
+        android:id="@+id/tv_start_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/scan"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dark_green"
+            android:text="@string/camera_icon"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button_gallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dark_green"
+            android:text="@string/gallery"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

@@ -4,9 +4,11 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -67,6 +69,15 @@ class ProfileActivity : AppCompatActivity() {
         if (!allPermissionsGranted()) {
             requestPermissionLauncher.launch(REQUIRED_PERMISSION)
         }
+
+        supportActionBar?.title = "Profile"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window: Window = window
+            window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
+        }
+        supportActionBar?.setBackgroundDrawable(
+            ContextCompat.getDrawable(this, R.color.dark_green)
+        )
 
         binding.linear.setOnClickListener {
             val options = arrayOf("Open Camera", "Open Gallery")

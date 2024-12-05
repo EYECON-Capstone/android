@@ -28,4 +28,10 @@
         android:name="com.example.eyecon.ui.news.NewsFragment"
         android:label="@string/title_news"
         tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/navigation_addphoto"
+        android:name="com.example.eyecon.ui.addphoto.AddPhotoFragment"
+        android:label="@string/camera_icon"
+        tools:layout="@layout/fragment_add_photo" />
 </navigation>

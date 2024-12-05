@@ -31,10 +31,12 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         auth = FirebaseAuth.getInstance()
         supportActionBar?.hide()
@@ -100,6 +102,10 @@ class LoginActivity : AppCompatActivity() {
 
 //                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                     //Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+                    val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("isLoggedIn", true)  // Menyimpan status login
+                    editor.apply()
                     startActivity(Intent(this, BoardingActivity::class.java))
                     finish()
                 } else {
