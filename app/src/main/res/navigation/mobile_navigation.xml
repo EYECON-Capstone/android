@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.eyecon.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_diagnosa"
+        android:name="com.example.eyecon.ui.diagnosa.DiagnosaFragment"
+        android:label="@string/title_diagnosa"
+        tools:layout="@layout/fragment_diagnosa" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.eyecon.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_history"
+        android:name="com.example.eyecon.ui.history.HistoryFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/navigation_news"
