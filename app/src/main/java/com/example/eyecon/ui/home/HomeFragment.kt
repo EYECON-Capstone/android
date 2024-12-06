@@ -1,5 +1,6 @@
 package com.example.eyecon.ui.home
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var newsAdapter: NewsHomeAdapter
+    private val auth = FirebaseAuth.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -127,7 +129,13 @@ class HomeFragment : Fragment() {
                 .setTitle("Konfirmasi Keluar")
                 .setMessage("Apakah Anda yakin ingin keluar?")
                 .setPositiveButton("Ya") { _, _ ->
-                    homeViewModel.signOut()
+                    val sharedPreferences = requireContext().getSharedPreferences("user_prefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.clear()  // Menghapus data login
+                    editor.apply()
+
+                    // Logout dari Firebase
+                    auth.signOut()
                     Toast.makeText(requireContext(), "Berhasil keluar", Toast.LENGTH_SHORT).show()
                     val intent = Intent(requireContext(), LoginActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK

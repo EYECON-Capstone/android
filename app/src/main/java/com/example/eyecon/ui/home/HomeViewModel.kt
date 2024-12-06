@@ -56,7 +56,4 @@ class HomeViewModel : ViewModel() {
         _profilePhotoUrl.value = user?.photoUrl?.toString()
     }
 
-    fun signOut() {
-        FirebaseAuth.getInstance().signOut()
-    }
 }

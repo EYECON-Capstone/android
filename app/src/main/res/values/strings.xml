@@ -134,4 +134,13 @@
     <string name="pterygium_desc">Pertumbuhan jaringan pada bagian putih mata yang dapat mencapai kornea, sering disebabkan paparan UV berlebih.</string>
     <string name="pterygium_rec1">Kacamata UV</string>
     <string name="pterygium_rec2">Tetes air mata</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gallery">Gallery</string>
+    <string name="analyze">Analyze</string>
+    <string name="image">Image</string>
+    <string name="scan">Mulai Scan</string>
+    <string name="result">Result</string>
+    <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
+
 </resources>

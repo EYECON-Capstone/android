@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_diagnosa, R.id.navigation_history, R.id.navigation_news
+                R.id.navigation_home, R.id.navigation_diagnosa,R.id.navigation_addphoto, R.id.navigation_history, R.id.navigation_news
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -38,5 +38,10 @@ class MainActivity : AppCompatActivity() {
             val window: Window = window
             window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
         }
+        supportActionBar?.setBackgroundDrawable(
+            ContextCompat.getDrawable(this, R.color.dark_green)
+        )
+
     }
+
 }
