@@ -9,6 +9,7 @@ interface NewsApiService {
     suspend fun getNews(
         @Query("q") query: String = "mata",
         @Query("language") language: String = "id",
+        @Query("sortBy") sortBy: String = "publishedAt",
         @Query("apiKey") apiKey: String
     ): NewsResponse
 }
