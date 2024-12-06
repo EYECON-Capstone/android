@@ -47,6 +47,10 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.diagnosa.DetailDiagnosaActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".WelcomeActivity"
             android:exported="true"
             android:label="@string/app_name">

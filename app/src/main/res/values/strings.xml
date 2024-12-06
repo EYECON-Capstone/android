@@ -40,6 +40,100 @@
     <string name="edit">Edit</string>
     <string name="camera_icon">Camera</string>
     <string name="default_username">User\n</string>
+
+    <string name="diagnosa_title">Diagnosa</string>
+    <string name="rekomendasi">Rekomendasi</string>
+    <string name="about_condition">Mengenai Kondisi</string>
+
+    <!-- Mata Merah -->
+    <string name="red_eye_title">Mata Merah</string>
+    <string name="red_eye_desc">Mata merah adalah kondisi di mana pembuluh darah di mata melebar, menyebabkan bagian putih mata menjadi merah. Dapat disebabkan oleh kelelahan, alergi, atau infeksi.</string>
+    <string name="red_eye_rec1">Vitamin C</string>
+    <string name="red_eye_rec2">Istirahat yang cukup</string>
+
+    <!-- Konjungtivitis -->
+    <string name="conjunctivitis_title">Konjungtivitis</string>
+    <string name="conjunctivitis_desc">Peradangan pada selaput yang menutupi bagian putih mata dan kelopak mata bagian dalam. Dapat disebabkan oleh infeksi atau alergi.</string>
+    <string name="conjunctivitis_rec1">Antibiotik tetes mata</string>
+    <string name="conjunctivitis_rec2">Kompres hangat</string>
+
+    <!-- Mata Minus -->
+    <string name="myopia_title">Mata Minus (Miopia)</string>
+    <string name="myopia_desc">Kondisi mata yang kesulitan melihat objek jauh dengan jelas namun dapat melihat objek dekat dengan baik.</string>
+    <string name="myopia_rec1">Kacamata minus</string>
+    <string name="myopia_rec2">Istirahatkan mata</string>
+
+    <!-- Mata Plus -->
+    <string name="hyperopia_title">Mata Plus (Hiperopia)</string>
+    <string name="hyperopia_desc">Kondisi mata yang kesulitan melihat objek dekat dengan jelas namun dapat melihat objek jauh dengan baik.</string>
+    <string name="hyperopia_rec1">Kacamata plus</string>
+    <string name="hyperopia_rec2">Pemeriksaan rutin</string>
+
+    <!-- Astigmatisme -->
+    <string name="astigmatism_title">Astigmatisme</string>
+    <string name="astigmatism_desc">Kelainan pada kornea mata yang menyebabkan pandangan menjadi kabur pada semua jarak.</string>
+    <string name="astigmatism_rec1">Kacamata silinder</string>
+    <string name="astigmatism_rec2">Operasi laser</string>
+
+    <!-- Katarak -->
+    <string name="cataract_title">Katarak</string>
+    <string name="cataract_desc">Kekeruhan pada lensa mata yang menyebabkan pandangan kabur dan sensitif terhadap cahaya.</string>
+    <string name="cataract_rec1">Operasi katarak</string>
+    <string name="cataract_rec2">Gunakan kacamata hitam</string>
+
+    <!-- Glaukoma -->
+    <string name="glaucoma_title">Glaukoma</string>
+    <string name="glaucoma_desc">Peningkatan tekanan dalam bola mata yang dapat merusak saraf optik dan menyebabkan kebutaan.</string>
+    <string name="glaucoma_rec1">Obat tetes mata</string>
+    <string name="glaucoma_rec2">Monitor tekanan mata</string>
+
+    <!-- Mata Kering -->
+    <string name="dry_eye_title">Mata Kering</string>
+    <string name="dry_eye_desc">Kondisi di mana mata tidak menghasilkan air mata yang cukup atau air mata menguap terlalu cepat.</string>
+    <string name="dry_eye_rec1">Tetes air mata buatan</string>
+    <string name="dry_eye_rec2">Menjaga kelembaban ruangan</string>
+
+    <!-- Strabismus -->
+    <string name="strabismus_title">Strabismus (Juling)</string>
+    <string name="strabismus_desc">Kondisi di mana kedua mata tidak sejajar dan mengarah ke arah yang berbeda.</string>
+    <string name="strabismus_rec1">Operasi otot mata</string>
+    <string name="strabismus_rec2">Latihan mata</string>
+
+    <!-- Retinopati -->
+    <string name="retinopathy_title">Retinopati</string>
+    <string name="retinopathy_desc">Kerusakan pada pembuluh darah retina, sering terjadi pada penderita diabetes.</string>
+    <string name="retinopathy_rec1">Terapi laser</string>
+    <string name="retinopathy_rec2">Kontrol gula darah</string>
+
+    <!-- Keratitis -->
+    <string name="keratitis_title">Keratitis</string>
+    <string name="keratitis_desc">Peradangan pada kornea mata yang dapat disebabkan oleh infeksi atau cedera.</string>
+    <string name="keratitis_rec1">Antibiotik</string>
+    <string name="keratitis_rec2">Jaga kebersihan mata</string>
+
+    <!-- Ambliopia -->
+    <string name="amblyopia_title">Ambliopia (Mata Malas)</string>
+    <string name="amblyopia_desc">Penglihatan yang lemah pada satu mata akibat otak lebih memilih menggunakan mata yang lain.</string>
+    <string name="amblyopia_rec1">Penutup mata</string>
+    <string name="amblyopia_rec2">Terapi visual</string>
+
+    <!-- Uveitis -->
+    <string name="uveitis_title">Uveitis</string>
+    <string name="uveitis_desc">Peradangan pada lapisan tengah mata yang dapat menyebabkan nyeri dan penglihatan kabur.</string>
+    <string name="uveitis_rec1">Obat steroid</string>
+    <string name="uveitis_rec2">Hindari cahaya terang</string>
+
+    <!-- Presbiopi -->
+    <string name="presbyopia_title">Presbiopi</string>
+    <string name="presbyopia_desc">Kondisi mata yang kesulitan fokus pada objek dekat, umumnya terjadi seiring bertambahnya usia.</string>
+    <string name="presbyopia_rec1">Kacamata baca</string>
+    <string name="presbyopia_rec2">Pencahayaan yang baik</string>
+
+    <!-- Pterigium -->
+    <string name="pterygium_title">Pterigium</string>
+    <string name="pterygium_desc">Pertumbuhan jaringan pada bagian putih mata yang dapat mencapai kornea, sering disebabkan paparan UV berlebih.</string>
+    <string name="pterygium_rec1">Kacamata UV</string>
+    <string name="pterygium_rec2">Tetes air mata</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="gallery">Gallery</string>
@@ -48,4 +142,5 @@
     <string name="scan">Mulai Scan</string>
     <string name="result">Result</string>
     <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
+
 </resources>

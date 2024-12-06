@@ -18,7 +18,11 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
+<<<<<<< HEAD
                                       <entry key="url" value="file:/C:/Users/M%20Sutan%20Fathir/AppData/Local/Android/Sdk/icons/material/materialicons/image/baseline_image_24.xml" />
+=======
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../AppData/Local/Android/Sdk/icons/material/materialicons/play_circle/baseline_play_circle_24.xml" />
+>>>>>>> bd784160474e60dbfec9ad67267d838572b895bd
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +32,12 @@
                         </option>
                         <option name="values">
                           <map>
+<<<<<<< HEAD
                             <entry key="color" value="ffffff" />
                             <entry key="outputName" value="baseline_image_24" />
+=======
+                            <entry key="outputName" value="ic_play" />
+>>>>>>> bd784160474e60dbfec9ad67267d838572b895bd
                             <entry key="sourceFile" value="C:\Users\khans\android" />
                           </map>
                         </option>
