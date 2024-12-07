@@ -4,6 +4,7 @@ data class Diagnosa(
     val id: Int,
     val title: String,
     val imageResId: Int,
+    val subtitle: String,
     val description: String,
     val recommendations: List<Rekomendasi>
 )

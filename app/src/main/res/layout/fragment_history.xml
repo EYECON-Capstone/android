@@ -4,17 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<<< HEAD:app/src/main/res/layout/fragment_history.xml
-    tools:context=".ui.history.HistoryFragment">
-
-    <TextView
-        android:id="@+id/text_history"
-========
     tools:context=".ui.diagnosa.DiagnosaFragment">
 
     <TextView
         android:id="@+id/text_diagnosa"
->>>>>>>> 2bfcd2892c69e1ad4f1690d96305953837fad89b:app/src/main/res/layout/fragment_diagnosa.xml
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
