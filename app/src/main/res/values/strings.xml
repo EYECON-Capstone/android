@@ -172,4 +172,13 @@
     <string name="error_loading_diagnosa">Gagal memuat data diagnosa</string>
     <string name="retry">Coba Lagi</string>
 
+    <string name="one_time_alarm">One Time Alarm</string>
+    <string name="alarm_date">Tanggal Alarm</string>
+    <string name="set_one_time_alarm">Set One Time Alarm</string>
+    <string name="alarm_message">Pesan Alarm</string>
+    <string name="repeating_alarm">Atur Pengingat</string>
+    <string name="set_repeating_alarm">Set Alarm</string>
+    <string name="cancel_alarm">Cancel Alarm</string>
+    <string name="alarm_time">Waktu Alarm</string>
+    <string name="title_settings">Settings</string>
 </resources>

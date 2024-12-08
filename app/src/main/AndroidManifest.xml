@@ -8,6 +8,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -21,6 +24,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EYECON"
         tools:targetApi="31">
+<<<<<<< HEAD
+        <receiver
+            android:name=".ui.settings.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false" />
+=======
 
         <receiver
             android:name=".widget.DiagnosaWidgetProvider"
@@ -49,6 +62,7 @@
             </intent-filter>
         </activity>
 
+>>>>>>> 129162421e9f66f01dc8ad4cf76aba4552d018df
         <activity
             android:name=".ui.detail.ResultActivity"
             android:exported="false" />
@@ -79,7 +93,18 @@
 
         <activity
             android:name=".MainActivity"
+<<<<<<< HEAD
+            android:exported="false" />
+        <activity
+            android:name=".ui.diagnosa.DetailDiagnosaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+=======
             android:exported="true">
+>>>>>>> 129162421e9f66f01dc8ad4cf76aba4552d018df
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -111,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     // Login failed, check the specific error
                     val errorMessage = when (task.exception) {
-                        is FirebaseAuthInvalidUserException -> "Email not registered"
+                        is FirebaseAuthInvalidUserException -> "Email not registere"
                         is FirebaseAuthInvalidCredentialsException -> "Incorrect password"
                         else -> "Login failed: ${task.exception?.message}"
                     }
