@@ -4,11 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".ui.history.HistoryFragment">
 
 
     <TextView
         android:id="@+id/text_history"
+=======
+    tools:context=".ui.diagnosa.DiagnosaFragment">
+
+    <TextView
+        android:id="@+id/text_diagnosa"
+>>>>>>> 129162421e9f66f01dc8ad4cf76aba4552d018df
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

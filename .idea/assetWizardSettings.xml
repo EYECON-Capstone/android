@@ -18,7 +18,11 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
+<<<<<<< HEAD
                                       <entry key="url" value="file:/C:/Users/M%20Sutan%20Fathir/AppData/Local/Android/Sdk/icons/material/materialicons/settings/baseline_settings_24.xml" />
+=======
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../AppData/Local/Android/Sdk/icons/material/materialicons/arrow_back_ios_new/baseline_arrow_back_ios_new_24.xml" />
+>>>>>>> 129162421e9f66f01dc8ad4cf76aba4552d018df
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +32,13 @@
                         </option>
                         <option name="values">
                           <map>
+<<<<<<< HEAD
                             <entry key="outputName" value="baseline_settings_24" />
                             <entry key="sourceFile" value="D:\Dicoding\Capstone" />
+=======
+                            <entry key="outputName" value="ic_back" />
+                            <entry key="sourceFile" value="C:\Users\khans\android" />
+>>>>>>> 129162421e9f66f01dc8ad4cf76aba4552d018df
                           </map>
                         </option>
                       </PersistentState>
