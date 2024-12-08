@@ -143,4 +143,13 @@
     <string name="result">Result</string>
     <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
 
+    <string name="one_time_alarm">One Time Alarm</string>
+    <string name="alarm_date">Tanggal Alarm</string>
+    <string name="set_one_time_alarm">Set One Time Alarm</string>
+    <string name="alarm_message">Pesan Alarm</string>
+    <string name="repeating_alarm">Atur Pengingat</string>
+    <string name="set_repeating_alarm">Set Alarm</string>
+    <string name="cancel_alarm">Cancel Alarm</string>
+    <string name="alarm_time">Waktu Alarm</string>
+    <string name="title_settings">Settings</string>
 </resources>

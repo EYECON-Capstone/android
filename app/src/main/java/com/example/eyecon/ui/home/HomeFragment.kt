@@ -20,6 +20,7 @@ import com.example.eyecon.auth.LoginActivity
 import com.example.eyecon.databinding.FragmentHomeBinding
 import com.example.eyecon.ui.profile.ProfileActivity
 import com.example.eyecon.ui.news.NewsHomeAdapter
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
 
