@@ -69,6 +69,10 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener, TimePickerFr
         }
 
         supportActionBar?.title = "Settings"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window: Window = window
+            window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
+        }
         binding?.btnRepeatingTime?.setOnClickListener(this)
         binding?.btnSetRepeatingAlarm?.setOnClickListener(this)
         binding?.btnCancelRepeatingAlarm?.setOnClickListener(this)

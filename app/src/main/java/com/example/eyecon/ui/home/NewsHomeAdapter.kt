@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eyecon.databinding.ItemHomeNewsBinding
-import com.example.eyecon.data.dataclass.Article
+import com.example.eyecon.data.news.dataclass.Article
 import java.text.SimpleDateFormat
 import java.util.*
 
