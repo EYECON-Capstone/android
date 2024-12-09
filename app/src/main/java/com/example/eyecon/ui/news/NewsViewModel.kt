@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.eyecon.data.api.RetrofitClient
-import com.example.eyecon.data.dataclass.Article
+import com.example.eyecon.data.news.api.RetrofitClient
+import com.example.eyecon.data.news.dataclass.Article
 import kotlinx.coroutines.launch
 
 class NewsViewModel : ViewModel() {
