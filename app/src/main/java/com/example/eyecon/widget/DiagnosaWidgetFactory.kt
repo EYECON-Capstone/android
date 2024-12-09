@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
 import com.example.eyecon.R
-import com.example.eyecon.data.dataclass.Diagnosa
+import com.example.eyecon.data.news.dataclass.Diagnosa
 import com.example.eyecon.ui.diagnosa.DetailDiagnosaActivity
 import com.example.eyecon.ui.diagnosa.DiagnosaViewModel
 

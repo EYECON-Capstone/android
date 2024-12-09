@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide
 import com.example.eyecon.R
 import com.example.eyecon.auth.LoginActivity
 import com.example.eyecon.databinding.FragmentHomeBinding
+import com.example.eyecon.ui.game.GamesActivity
 import com.example.eyecon.ui.profile.ProfileActivity
 import com.example.eyecon.ui.news.NewsHomeAdapter
 import com.google.firebase.auth.FirebaseAuth
@@ -41,6 +42,11 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
+        binding.games.setOnClickListener {
+            val intent = Intent(requireActivity(), GamesActivity::class.java)
+            startActivity(intent)
+        }
 
         setupNewsRecyclerView()
         setupProfileSection()

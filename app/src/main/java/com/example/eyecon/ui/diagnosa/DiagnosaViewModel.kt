@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.eyecon.data.dataclass.Diagnosa
-import com.example.eyecon.data.dataclass.Rekomendasi
+import com.example.eyecon.data.news.dataclass.Diagnosa
+import com.example.eyecon.data.news.dataclass.Rekomendasi
 import com.example.eyecon.R
 
 class DiagnosaViewModel : ViewModel() {

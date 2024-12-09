@@ -181,4 +181,7 @@
     <string name="cancel_alarm">Cancel Alarm</string>
     <string name="alarm_time">Waktu Alarm</string>
     <string name="title_settings">Settings</string>
+    <string name="games">Games</string>
+    <string name="another_features">Another Features</string>
+    <string name="gemini">Gemini</string>
 </resources>

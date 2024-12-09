@@ -6,7 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -24,10 +25,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EYECON"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.game.GamesActivity"
+            android:exported="false" />
+
         <receiver
             android:name=".ui.settings.AlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <activity
             android:name=".ui.settings.SettingsActivity"
@@ -40,6 +45,7 @@
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/diagnosa_widget_info" />
@@ -47,8 +53,8 @@
 
         <service
             android:name=".widget.DiagnosaWidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS"
-            android:exported="false" />
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <activity
             android:name=".ui.diagnosa.DetailDiagnosaActivity"
@@ -56,37 +62,31 @@
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="com.example.eyecon.ACTION_VIEW_DIAGNOSA" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.detail.ResultActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.CameraActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.BoardingActivity"
             android:exported="false" />
-
         <activity
             android:name=".auth.LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".auth.ForgotPasswordActivity"
             android:exported="false" />
-
         <activity
             android:name=".auth.RegistrasiActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -96,8 +96,10 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
