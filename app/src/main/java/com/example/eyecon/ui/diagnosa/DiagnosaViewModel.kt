@@ -137,13 +137,13 @@ class DiagnosaViewModel : ViewModel() {
             ),
             Diagnosa(
                 12,
-                context.getString(R.string.amblyopia_title),
-                R.drawable.img_amblyopia,
-                context.getString(R.string.red_eye_subtitle),
-                context.getString(R.string.amblyopia_desc),
+                context.getString(R.string.eye_bags_title),
+                R.drawable.img_kantungmata,
+                context.getString(R.string.eye_bags_subtitle),
+                context.getString(R.string.eye_bags_desc),
                 listOf(
-                    Rekomendasi(R.drawable.ic_medicine, context.getString(R.string.amblyopia_rec1)),
-                    Rekomendasi(R.drawable.ic_medicine, context.getString(R.string.amblyopia_rec2))
+                    Rekomendasi(R.drawable.ic_medicine, context.getString(R.string.eye_bags_rec1)),
+                    Rekomendasi(R.drawable.ic_medicine, context.getString(R.string.eye_bags_rec2))
                 )
             ),
             Diagnosa(

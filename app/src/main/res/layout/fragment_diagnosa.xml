@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="Cek hasil diagnosa yang relevan, yuk!"
+        android:fontFamily="@font/inter_reguler"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,6 +20,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
+        android:fontFamily="@font/inter_reguler"
         android:layout_height="0dp"
         android:padding="8dp"
         android:clipToPadding="false"

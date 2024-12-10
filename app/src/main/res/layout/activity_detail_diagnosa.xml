@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:textSize="24sp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_bold"
                     app:layout_constraintTop_toBottomOf="@id/diagnosa_image"
                     tools:text="Judul Diagnosa" />
 
@@ -55,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textSize="16sp"
+                    android:fontFamily="@font/inter_reguler"
                     android:textStyle="italic"
                     app:layout_constraintTop_toBottomOf="@id/title_text"
                     tools:text="Subtitle Diagnosa" />
@@ -65,6 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:textSize="16sp"
+                    android:fontFamily="@font/inter_reguler"
                     android:justificationMode="inter_word"
                     app:layout_constraintTop_toBottomOf="@id/subtitle_text"
                     tools:text="Deskripsi detail diagnosa" />
@@ -76,7 +78,7 @@
                     android:layout_marginTop="24dp"
                     android:text="@string/rekomendasi"
                     android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_bold"
                     app:layout_constraintTop_toBottomOf="@id/description_text" />
 
                 <androidx.recyclerview.widget.RecyclerView

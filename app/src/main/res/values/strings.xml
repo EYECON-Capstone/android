@@ -122,12 +122,12 @@
     <string name="keratitis_rec1">Antibiotik</string>
     <string name="keratitis_rec2">Jaga kebersihan mata</string>
 
-    <!-- Ambliopia -->
-    <string name="amblyopia_title">Ambliopia (Mata Malas)</string>
-    <string name="amblyopia_desc">Ambliopia, atau yang dikenal sebagai mata malas, adalah kondisi di mana penglihatan pada salah satu mata menjadi lemah karena otak lebih memilih menggunakan mata yang lain. Kondisi ini biasanya terjadi sejak masa kanak-kanak dan dapat disebabkan oleh faktor seperti strabismus (mata juling), perbedaan ukuran refraksi antara kedua mata (anisometropia), atau adanya hambatan penglihatan seperti katarak. Jika tidak ditangani, ambliopia dapat menyebabkan gangguan permanen pada penglihatan mata yang terkena.</string>
-    <string name="amblyopia_subtitle">Kondisi yang umum terjadi</string>
-    <string name="amblyopia_rec1">Penutup mata</string>
-    <string name="amblyopia_rec2">Terapi visual</string>
+    <string name="eye_bags_title">Kantung Mata</string>
+    <string name="eye_bags_desc">Kantung mata adalah pembengkakan ringan atau area gelap yang muncul di bawah mata. Kondisi ini sering kali disebabkan oleh penuaan, retensi cairan, kurang tidur, atau faktor genetik. Meskipun kantung mata biasanya tidak berbahaya, mereka dapat memengaruhi penampilan wajah secara keseluruhan dan terkadang membuat seseorang terlihat lelah. Penanganan meliputi perubahan gaya hidup, penggunaan produk perawatan kulit, atau perawatan medis tertentu jika diperlukan.</string>
+    <string name="eye_bags_subtitle">Keluhan yang sangat umum</string>
+    <string name="eye_bags_rec1">Kompres dingin</string>
+    <string name="eye_bags_rec2">Krim mata</string>
+
 
     <!-- Uveitis -->
     <string name="uveitis_title">Uveitis</string>
