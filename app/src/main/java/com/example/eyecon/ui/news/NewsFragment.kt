@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eyecon.databinding.FragmentNewsBinding
 
-// NewsFragment.kt
 class NewsFragment : Fragment() {
     private lateinit var viewModel: NewsViewModel
     private lateinit var newsAdapter: NewsAdapter
@@ -48,10 +47,16 @@ class NewsFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.newsState.observe(viewLifecycleOwner) { articles ->
+            binding.progressBar.visibility = View.GONE
             newsAdapter.updateArticles(articles)
         }
 
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        }
+
         viewModel.errorState.observe(viewLifecycleOwner) { error ->
+            binding.progressBar.visibility = View.GONE
             Toast.makeText(context, error, Toast.LENGTH_LONG).show()
         }
     }

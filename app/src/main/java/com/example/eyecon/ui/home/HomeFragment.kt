@@ -1,8 +1,11 @@
 package com.example.eyecon.ui.home
 
+import android.R.attr.contentDescription
+import android.R.attr.foreground
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +22,7 @@ import com.example.eyecon.R
 import com.example.eyecon.auth.LoginActivity
 import com.example.eyecon.databinding.FragmentHomeBinding
 import com.example.eyecon.ui.game.GamesActivity
+import com.example.eyecon.ui.gemini.GeminiChatbotActivity
 import com.example.eyecon.ui.profile.ProfileActivity
 import com.example.eyecon.ui.news.NewsHomeAdapter
 import com.google.firebase.auth.FirebaseAuth
@@ -47,6 +51,12 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireActivity(), GamesActivity::class.java)
             startActivity(intent)
         }
+
+        binding.geminibot.setOnClickListener {
+            val intent = Intent(requireActivity(), GeminiChatbotActivity::class.java)
+            startActivity(intent)
+        }
+
 
         setupNewsRecyclerView()
         setupProfileSection()
@@ -151,6 +161,13 @@ class HomeFragment : Fragment() {
                 }
                 .setNegativeButton("Batal", null)
                 .show()
+        }
+    }
+
+    private fun setupGeminiButton() {
+        binding.geminibot.apply {
+            setImageResource(R.drawable.gemini) // Make sure to add this icon
+            contentDescription = "Open Chatbot"
         }
     }
 
