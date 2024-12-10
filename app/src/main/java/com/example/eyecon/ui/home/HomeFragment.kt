@@ -74,7 +74,6 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-<<<<<<< HEAD
         val layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvHistoryHorizontal.layoutManager = layoutManager
 
@@ -88,14 +87,14 @@ class HomeFragment : Fragment() {
         historyViewModel.listHistory.observe(viewLifecycleOwner) {
             setEventData(it)
         }
-=======
+
         binding.geminibot.setOnClickListener {
             val intent = Intent(requireActivity(), GeminiChatbotActivity::class.java)
             startActivity(intent)
         }
 
 
->>>>>>> 969383ef4359b6ac5abc0011300f9cc8430b4765
+
         setupNewsRecyclerView()
         setupProfileSection()
         setupLogoutButton()
