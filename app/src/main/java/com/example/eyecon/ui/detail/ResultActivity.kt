@@ -10,17 +10,16 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
-import com.bumptech.glide.Glide
 import com.example.eyecon.R
+import com.example.eyecon.data.news.dataclass.Rekomendasi
 import com.example.eyecon.data.photo.local.entity.HistoryEntity
 import com.example.eyecon.databinding.ActivityResultBinding
 import com.example.eyecon.ui.addphoto.AddPhotoViewModel
 import com.example.eyecon.ui.addphoto.AddPhotoViewModelFactory
+import com.example.eyecon.ui.diagnosa.RekomendasiAdapter
 import com.example.eyecon.utils.reduceFileImage
 import com.example.eyecon.utils.uriToFile
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -31,7 +30,8 @@ import java.util.Locale
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
-    private val addPhotoViewModel by viewModels<AddPhotoViewModel>{
+    private lateinit var rekomendasiAdapter: RekomendasiAdapter
+    private val addPhotoViewModel by viewModels<AddPhotoViewModel> {
         AddPhotoViewModelFactory.getInstance(this)
     }
 
@@ -40,12 +40,18 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Setup action bar and status bar
         supportActionBar?.title = "Results"
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val window: Window = window
             window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
         }
 
+        // Setup RecyclerView for recommendations
+        rekomendasiAdapter = RekomendasiAdapter()
+        binding.rekomendasiRecyclerView.adapter = rekomendasiAdapter
+
+        // Get image URI from intent
         val imageUri = Uri.parse(intent.getStringExtra(EXTRA_IMAGE_URI))
 
         imageUri?.let {
@@ -54,25 +60,30 @@ class ResultActivity : AppCompatActivity() {
             classifyImage(it)
         }
 
+        // Observe loading state
         addPhotoViewModel.isLoading.observe(this, Observer { isLoading ->
-            if (isLoading) {
-                // Show loading indicator
-                binding.progressBar.visibility = View.VISIBLE
-            } else {
-                // Hide loading indicator
-                binding.progressBar.visibility = View.GONE
-            }
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         })
+
+        // Observe result data
         addPhotoViewModel.resultData.observe(this) { data ->
             data?.let {
-                // Display the result, diagnosa, and createdAt in the UI
-                binding.resultText.text = "Result: ${it.result}"
-                binding.diagnosisText.text=it.diagnosa
+                // Log the result for debugging
+                Log.d("ResultActivity", "Result received: ${it.result}")
 
+                // Display result and diagnosis
+                binding.resultText.text = "Result: ${it.result}"
+                binding.diagnosisText.text = it.diagnosa
+
+                // Get and display recommendations based on diagnosis
+                val recommendations = getRecommendations(it.result)
+                rekomendasiAdapter.submitList(recommendations)
+
+                // Save detection history
                 val currentUser = FirebaseAuth.getInstance().currentUser
                 val historyEntity = HistoryEntity(
                     idUser = currentUser!!.uid,
-                    id= it.id,
+                    id = it.id,
                     result = it.result,
                     createdAt = it.createdAt,
                     diagnosa = it.diagnosa,
@@ -81,8 +92,8 @@ class ResultActivity : AppCompatActivity() {
                 addPhotoViewModel.saveImageDetectionHistory(historyEntity)
             }
         }
-        // Get photo URI from the Intent
     }
+
     private fun classifyImage(uri: Uri) {
         val currentUser = FirebaseAuth.getInstance().currentUser
         currentUser?.let {
@@ -96,10 +107,42 @@ class ResultActivity : AppCompatActivity() {
             )
             val idUser = userId.toRequestBody("text/plain".toMediaType())
 
-            // Calling the ViewModel to predict using the image and userId
+            // Call ViewModel to predict using the image and userId
             addPhotoViewModel.predictphoto(multipartBody, idUser)
         }
     }
+
+    private fun getRecommendations(result: String): List<Rekomendasi> {
+        Log.d("Recommendations", "Processing result: $result")
+
+        return when (result) {
+            "Mata Merah", "Result: Mata Merah" -> listOf(
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.red_eye_rec1)),
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.red_eye_rec2)),
+            )
+            "Mata Juling", "Result: Mata Juling" -> listOf(
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.strabismus_rec1)),
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.strabismus_rec2)),
+            )
+            "Mata Normal", "Result: Mata Normal" -> listOf(
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.conjunctivitis_rec1)),
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.conjunctivitis_rec2)),
+            )
+            "Kantung Mata", "Result: Kantung Mata" -> listOf(
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.eye_bags_rec1)),
+                Rekomendasi(R.drawable.ic_medicine, getString(R.string.eye_bags_rec2)),
+            )
+            else -> {
+                // Log unmatched results
+                Log.e("Recommendations", "Unmatched result: $result")
+                listOf(
+                    Rekomendasi(R.drawable.ic_medicine, getString(R.string.conjunctivitis_rec1)),
+                    Rekomendasi(R.drawable.ic_medicine, getString(R.string.conjunctivitis_rec2)),
+                )
+            }
+        }
+    }
+
     private fun formatDateTime(timestamp: Long): String {
         val sdf = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
         return sdf.format(Date(timestamp))
