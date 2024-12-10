@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.example.eyecon"
-    compileSdk = 34  // Keep at 34 since 35 is not yet stable
+    compileSdk = 35  // Keep at 34 since 35 is not yet stable
 
     defaultConfig {
         applicationId = "com.example.eyecon"
@@ -45,9 +45,7 @@ android {
 
 dependencies {
     // Use specific version for core-ktx that's compatible with SDK 34
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.core:core:1.12.0")
-
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
@@ -79,17 +77,17 @@ dependencies {
     implementation(libs.retrofit2.converter.gson)
 
     // UI Components
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("androidx.cardview:cardview:1.0.0")
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.cardview)
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation(libs.kotlinx.coroutines.android)
 
     // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation(libs.lifecycle.runtime.ktx)
 
     // Image Loading
-    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation(libs.glide)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.logging.interceptor)
     implementation(libs.androidx.room.runtime)

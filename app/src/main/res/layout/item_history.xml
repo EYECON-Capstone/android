@@ -23,6 +23,7 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/title_history"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"

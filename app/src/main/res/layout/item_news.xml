@@ -17,6 +17,7 @@
             android:id="@+id/newsImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:contentDescription="@string/title_news"
             android:scaleType="centerCrop" />
 
         <TextView

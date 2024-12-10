@@ -23,7 +23,7 @@
             android:id="@+id/keluar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Keluar"
+            android:text="@string/out"
             android:layout_marginEnd="60dp"
             android:textSize="14sp"
             android:textColor="@color/white"
@@ -95,7 +95,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/games"
@@ -121,7 +122,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginStart="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/geminibot"

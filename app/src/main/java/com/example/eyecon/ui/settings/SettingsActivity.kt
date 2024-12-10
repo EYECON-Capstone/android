@@ -8,14 +8,10 @@ import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.eyecon.R
-import com.example.eyecon.databinding.ActivityProfileBinding
 import com.example.eyecon.databinding.ActivitySettingsBinding
 import java.text.SimpleDateFormat
 import java.util.Calendar

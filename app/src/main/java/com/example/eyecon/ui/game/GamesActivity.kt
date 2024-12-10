@@ -1,14 +1,7 @@
 package com.example.eyecon.ui.game
 
 import android.os.Bundle
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.eyecon.R
 import com.example.eyecon.databinding.ActivityGamesBinding
 
 class GamesActivity : AppCompatActivity() {
