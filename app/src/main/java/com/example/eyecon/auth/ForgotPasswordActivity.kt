@@ -40,10 +40,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val window: Window = window
-            window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
-        }
+        val window: Window = window
+        window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
     }
 
     private fun sendPasswordResetEmail(email: String) {

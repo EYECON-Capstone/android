@@ -16,18 +16,9 @@ interface ApiService {
         @Part("id_user") idUser: RequestBody
     ): PhotoResponse
 
-    @GET("/predict/histories/{id_user}")
-    suspend fun getDiagnoseHistory(
-        @Path("id_user") idUser: String
-    ): HistoryResponse
-
     @GET("/predict/{id}")
     suspend fun getDetailItem(
         @Path("id") id: String
     ): DetailResponse
 
-    @DELETE("/predict/{id}")
-    suspend fun deleteDiagnoseHistoryItem(
-        @Path("id") id: String
-    ): HistoryResponse
 }

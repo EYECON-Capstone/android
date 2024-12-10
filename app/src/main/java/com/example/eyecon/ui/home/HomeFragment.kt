@@ -198,12 +198,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setupGeminiButton() {
-        binding.geminibot.apply {
-            setImageResource(R.drawable.gemini) // Make sure to add this icon
-            contentDescription = "Open Chatbot"
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

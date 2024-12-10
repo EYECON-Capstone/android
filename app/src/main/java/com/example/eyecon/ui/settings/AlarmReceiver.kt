@@ -166,8 +166,6 @@ class AlarmReceiver : BroadcastReceiver() {
 
         // Siapkan 2 id untuk 2 macam alarm, onetime dan repeating
         private const val ID_REPEATING = 101
-
-        private const val DATE_FORMAT = "yyyy-MM-dd"
         private const val TIME_FORMAT = "HH:mm"
 
     }

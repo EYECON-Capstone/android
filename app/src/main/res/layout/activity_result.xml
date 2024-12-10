@@ -29,6 +29,7 @@
             android:layout_height="400dp"
             android:background="@color/backgroundDark"
             android:padding="16dp"
+            android:contentDescription="@string/result"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/baseline_image_24" />
 
