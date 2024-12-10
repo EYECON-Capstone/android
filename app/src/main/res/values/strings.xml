@@ -184,4 +184,6 @@
     <string name="games">Games</string>
     <string name="another_features">Another Features</string>
     <string name="gemini">Gemini</string>
+    <string name="createdAt">Created At</string>
+    <string name="hapus">Hapus</string>
 </resources>

@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
+    id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -29,11 +31,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -89,7 +91,15 @@ dependencies {
     // Image Loading
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation(libs.androidx.swiperefreshlayout)
+<<<<<<< HEAD
+    implementation(libs.logging.interceptor)
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.room.compiler)// contoh versi terbaru
+    implementation(libs.room.ktx)
+
+=======
 
     // Gemini AI
     implementation("com.google.ai.client.generativeai:generativeai:0.1.1")
+>>>>>>> 969383ef4359b6ac5abc0011300f9cc8430b4765
 }
