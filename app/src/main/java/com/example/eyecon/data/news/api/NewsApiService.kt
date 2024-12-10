@@ -1,6 +1,6 @@
-package com.example.eyecon.data.api
+package com.example.eyecon.data.news.api
 
-import com.example.eyecon.data.dataclass.NewsResponse
+import com.example.eyecon.data.news.dataclass.NewsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

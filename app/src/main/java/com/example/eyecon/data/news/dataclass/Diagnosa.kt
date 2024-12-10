@@ -1,4 +1,4 @@
-package com.example.eyecon.data.dataclass
+package com.example.eyecon.data.news.dataclass
 
 data class Diagnosa(
     val id: Int,

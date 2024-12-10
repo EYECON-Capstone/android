@@ -1,4 +1,4 @@
-package com.example.eyecon.data.api
+package com.example.eyecon.data.news.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.eyecon.data.dataclass.Rekomendasi
+import com.example.eyecon.data.news.dataclass.Rekomendasi
 import com.example.eyecon.databinding.ItemRekomendasiBinding
 
 class RekomendasiAdapter : ListAdapter<Rekomendasi, RekomendasiAdapter.ViewHolder>(DIFF_CALLBACK) {

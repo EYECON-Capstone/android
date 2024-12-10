@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.eyecon.data.dataclass.Diagnosa
+import com.example.eyecon.data.news.dataclass.Diagnosa
 import com.example.eyecon.databinding.FragmentDiagnosaBinding
 
 class DiagnosaFragment : Fragment() {
