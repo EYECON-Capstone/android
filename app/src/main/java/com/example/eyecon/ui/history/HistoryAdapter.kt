@@ -17,7 +17,7 @@ class HistoryAdapter : ListAdapter<HistoryEntity, HistoryAdapter.HistoryViewHold
         fun bind(history: HistoryEntity) {
 
             binding.tvItemResult.text = history.result
-            binding.tvItemCreatedat.text = history.createdAt
+            binding.tvItemCreatedat.text = formatDate(history.createdAt)
             Glide.with(itemView.context)
                 .load(history.imgUrl)
                 .into(binding.imgItemPhoto)
