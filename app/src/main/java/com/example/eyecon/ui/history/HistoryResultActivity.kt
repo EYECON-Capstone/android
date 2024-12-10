@@ -1,9 +1,8 @@
 package com.example.eyecon.ui.history
 
-import android.os.Build
 import android.os.Bundle
-import android.view.Window
 import android.util.Log
+import android.view.Window
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -34,7 +33,6 @@ class HistoryResultActivity : AppCompatActivity() {
         binding = ActivityHistoryResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Setup RecyclerView for recommendations
         rekomendasiAdapter = RekomendasiAdapter()
         binding.rekomendasiRecyclerView.adapter = rekomendasiAdapter
 
@@ -55,18 +53,15 @@ class HistoryResultActivity : AppCompatActivity() {
                     binding.resultText.text = "Result: ${detail.result}"
                     binding.diagnosisText.text = detail.diagnosa
 
-                    // Get and display recommendations based on result
                     val recommendations = getRecommendations(detail.result)
                     rekomendasiAdapter.submitList(recommendations)
                 }?.onFailure {
-                    // Handle the error
                 }
             }
         }
     }
 
     private fun getRecommendations(result: String): List<Rekomendasi> {
-        // Log the exact result for debugging
         Log.d("Recommendations", "Processing result: $result")
 
         return when (result) {
@@ -87,7 +82,6 @@ class HistoryResultActivity : AppCompatActivity() {
                 Rekomendasi(R.drawable.ic_medicine, getString(R.string.eye_bags_rec2)),
             )
             else -> {
-                // Log unmatched results
                 Log.e("Recommendations", "Unmatched result: $result")
                 listOf(
                     Rekomendasi(R.drawable.ic_medicine, getString(R.string.conjunctivitis_rec1)),

@@ -1,8 +1,7 @@
 package com.example.eyecon.data.photo.remote.retrofit
 
-import com.example.eyecon.data.photo.remote.response.PhotoResponse
 import com.example.eyecon.data.photo.remote.response.DetailResponse
-import com.example.eyecon.data.photo.remote.response.HistoryResponse
+import com.example.eyecon.data.photo.remote.response.PhotoResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*

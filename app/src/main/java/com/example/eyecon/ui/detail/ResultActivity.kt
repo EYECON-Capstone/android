@@ -1,7 +1,6 @@
 package com.example.eyecon.ui.detail
 
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.Window
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import com.example.eyecon.R
 import com.example.eyecon.data.news.dataclass.Rekomendasi
 import com.example.eyecon.data.photo.local.entity.HistoryEntity
@@ -24,9 +22,6 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
@@ -40,16 +35,13 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Setup action bar and status bar
         supportActionBar?.title = "Results"
         val window: Window = window
         window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
 
-        // Setup RecyclerView for recommendations
         rekomendasiAdapter = RekomendasiAdapter()
         binding.rekomendasiRecyclerView.adapter = rekomendasiAdapter
 
-        // Get image URI from intent
         val imageUri = Uri.parse(intent.getStringExtra(EXTRA_IMAGE_URI))
 
         imageUri?.let {
@@ -58,26 +50,20 @@ class ResultActivity : AppCompatActivity() {
             classifyImage(it)
         }
 
-        // Observe loading state
         addPhotoViewModel.isLoading.observe(this) { isLoading ->
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         }
 
-        // Observe result data
         addPhotoViewModel.resultData.observe(this) { data ->
             data?.let {
-                // Log the result for debugging
                 Log.d("ResultActivity", "Result received: ${it.result}")
 
-                // Display result and diagnosis
                 binding.resultText.text = "Result: ${it.result}"
                 binding.diagnosisText.text = it.diagnosa
 
-                // Get and display recommendations based on diagnosis
                 val recommendations = getRecommendations(it.result)
                 rekomendasiAdapter.submitList(recommendations)
 
-                // Save detection history
                 val currentUser = FirebaseAuth.getInstance().currentUser
                 val historyEntity = HistoryEntity(
                     idUser = currentUser!!.uid,
@@ -105,7 +91,6 @@ class ResultActivity : AppCompatActivity() {
             )
             val idUser = userId.toRequestBody("text/plain".toMediaType())
 
-            // Call ViewModel to predict using the image and userId
             addPhotoViewModel.predictphoto(multipartBody, idUser)
         }
     }
@@ -131,7 +116,6 @@ class ResultActivity : AppCompatActivity() {
                 Rekomendasi(R.drawable.ic_medicine, getString(R.string.eye_bags_rec2)),
             )
             else -> {
-                // Log unmatched results
                 Log.e("Recommendations", "Unmatched result: $result")
                 listOf(
                     Rekomendasi(R.drawable.ic_medicine, getString(R.string.conjunctivitis_rec1)),
@@ -140,8 +124,6 @@ class ResultActivity : AppCompatActivity() {
             }
         }
     }
-
-
 
     companion object {
         const val EXTRA_IMAGE_URI = "extra_image_uri"

@@ -94,6 +94,6 @@ dependencies {
     ksp(libs.room.compiler)// contoh versi terbaru
     implementation(libs.room.ktx)
     // Gemini AI
-    implementation("com.google.ai.client.generativeai:generativeai:0.1.1")
+    implementation("com.google.ai.client.generativeai:generativeai:0.1.2")
 
 }

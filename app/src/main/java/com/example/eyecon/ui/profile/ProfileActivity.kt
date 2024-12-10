@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -24,7 +23,6 @@ import com.example.eyecon.R
 import com.example.eyecon.databinding.ActivityProfileBinding
 import com.example.eyecon.ui.CameraActivity
 import com.example.eyecon.ui.CameraActivity.Companion.CAMERAX_RESULT
-
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
@@ -77,13 +75,12 @@ class ProfileActivity : AppCompatActivity() {
             builder.setTitle("Choose an option")
             builder.setItems(options) { _, which ->
                 when (which) {
-                    0 -> startCamera() // Option for Camera
-                    1 -> startGallery() // Option for Gallery
+                    0 -> startCamera()
+                    1 -> startGallery()
                 }
             }
             builder.show()
         }
-
 
         profileViewModel.showemail()
         profileViewModel.showusername()
@@ -106,7 +103,7 @@ class ProfileActivity : AppCompatActivity() {
                     .into(binding.imageProfile)
             } else {
                 Glide.with(this)
-                    .load(R.drawable.baseline_person_24) // Default image
+                    .load(R.drawable.baseline_person_24)
                     .circleCrop()
                     .into(binding.imageProfile)
             }
@@ -117,7 +114,6 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         binding.saveButton.setOnClickListener {
-            // Perbarui foto profil (jika ada)
 
             profileViewModel.isLoading.observe(this) {
                 showLoading(it)
@@ -128,7 +124,6 @@ class ProfileActivity : AppCompatActivity() {
                     profileViewModel.updateProfilePhoto(uri)
                 }
             }
-
 
             Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
@@ -147,7 +142,7 @@ class ProfileActivity : AppCompatActivity() {
         ActivityResultContracts.PickVisualMedia()
     ) { uri: Uri? ->
         if (uri != null) {
-            profileViewModel.updateProfilePhoto(uri) // Perbarui nilai dengan URI baru
+            profileViewModel.updateProfilePhoto(uri)
         } else {
             Log.d("Photo Picker", "No media selected")
         }
@@ -165,7 +160,7 @@ class ProfileActivity : AppCompatActivity() {
         if (it.resultCode == CAMERAX_RESULT) {
             val uri = it.data?.getStringExtra(CameraActivity.EXTRA_CAMERAX_IMAGE)?.toUri()
             if (uri != null) {
-                profileViewModel.updateProfilePhoto(uri) // Perbarui nilai dengan URI baru
+                profileViewModel.updateProfilePhoto(uri)
             } else {
                 Log.d("Photo Picker", "No media selected")
             }
@@ -195,7 +190,6 @@ class ProfileActivity : AppCompatActivity() {
     @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
     override fun onBackPressed() {
         super.onBackPressed()
-        // Simulate clicking the "Save" button when the back button is pressed
         binding.saveButton.performClick()
     }
 

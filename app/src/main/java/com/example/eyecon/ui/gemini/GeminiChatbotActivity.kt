@@ -50,7 +50,6 @@ class GeminiChatbotActivity : AppCompatActivity() {
             if (message.isNotEmpty()) {
                 sendMessage(message)
                 binding.messageInput.text.clear()
-                // Disable input dan button selama loading
                 binding.messageInput.isEnabled = false
                 binding.sendButton.isEnabled = false
             }
@@ -63,7 +62,6 @@ class GeminiChatbotActivity : AppCompatActivity() {
 
     private fun hideLoading() {
         binding.loadingProgressBar.visibility = View.GONE
-        // Enable kembali input dan button
         binding.messageInput.isEnabled = true
         binding.sendButton.isEnabled = true
     }

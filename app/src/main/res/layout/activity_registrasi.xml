@@ -98,7 +98,8 @@
         app:layout_constraintTop_toBottomOf="@+id/text_detail"
         app:layout_constraintStart_toStartOf="@+id/rounded_view"
         app:layout_constraintEnd_toEndOf="@+id/rounded_view"
-        android:layout_marginTop="42dp" />
+        android:layout_marginTop="42dp"
+        tools:ignore="Autofill,TextFields" />
 
     <EditText
         android:id="@+id/email"

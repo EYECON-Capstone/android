@@ -1,7 +1,6 @@
 package com.example.eyecon.auth
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.Window
 import android.widget.Toast
@@ -49,7 +48,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Reset email sent", Toast.LENGTH_SHORT).show()
-                    finish()  // Close the activity after sending the email
+                    finish()
                 } else {
                     Toast.makeText(this, "Failed to send reset email", Toast.LENGTH_SHORT).show()
                 }

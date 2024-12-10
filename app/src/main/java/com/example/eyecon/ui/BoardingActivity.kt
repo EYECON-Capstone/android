@@ -1,7 +1,6 @@
 package com.example.eyecon.ui
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity

@@ -27,8 +27,6 @@ class HistoryAdapter : ListAdapter<HistoryEntity, HistoryAdapter.HistoryViewHold
                 intent.putExtra(EXTRA_ID, history.id)
                 itemView.context.startActivity(intent)
             }
-
-
         }
     }
 
