@@ -17,17 +17,20 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.example.eyecon.R
 import com.example.eyecon.databinding.FragmentAddPhotoBinding
 import com.example.eyecon.ui.CameraActivity
 import com.example.eyecon.ui.detail.ResultActivity
 
 
+
 class AddPhotoFragment : Fragment() {
     private var _binding: FragmentAddPhotoBinding? = null
     private val binding get() = _binding!!
-    private lateinit var addPhotoViewModel: AddPhotoViewModel
+    private val addPhotoViewModel by viewModels<AddPhotoViewModel>{
+        AddPhotoViewModelFactory.getInstance(requireActivity())
+    }
     private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
             if (isGranted) {
@@ -40,7 +43,13 @@ class AddPhotoFragment : Fragment() {
     private fun allPermissionsGranted() =
         ContextCompat.checkSelfPermission(requireContext(), REQUIRED_PERMISSION) == PackageManager.PERMISSION_GRANTED
 
-
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,8 +59,6 @@ class AddPhotoFragment : Fragment() {
 
         _binding = FragmentAddPhotoBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        addPhotoViewModel = ViewModelProvider(this)[AddPhotoViewModel::class.java]
 
         if (!allPermissionsGranted()) {
             requestPermissionLauncher.launch(REQUIRED_PERMISSION)
@@ -72,6 +79,10 @@ class AddPhotoFragment : Fragment() {
                 binding.rvImage.setImageURI(it)
             }
         }
+        addPhotoViewModel.isLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
+        }
+//
         (requireActivity() as AppCompatActivity).supportActionBar?.setBackgroundDrawable(
             ColorDrawable(ContextCompat.getColor(requireContext(), R.color.dark_green))
         )

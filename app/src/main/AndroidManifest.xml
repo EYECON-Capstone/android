@@ -26,6 +26,9 @@
         android:theme="@style/Theme.EYECON"
         tools:targetApi="31">
         <activity
+            android:name=".ui.history.HistoryResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.game.GamesActivity"
             android:exported="false" />
 
@@ -89,7 +92,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".ui.gemini.GeminiChatbotActivity"
             android:exported="false"

@@ -8,7 +8,6 @@ import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.eyecon.MainActivity
 import com.example.eyecon.R
 import com.example.eyecon.databinding.ActivityRegistrasiBinding
 import com.google.firebase.auth.FirebaseAuth

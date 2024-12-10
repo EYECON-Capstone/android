@@ -1,11 +1,8 @@
 package com.example.eyecon.ui.home
 
-import android.R.attr.contentDescription
-import android.R.attr.foreground
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,12 +12,16 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.eyecon.R
 import com.example.eyecon.auth.LoginActivity
+import com.example.eyecon.data.photo.local.entity.HistoryEntity
 import com.example.eyecon.databinding.FragmentHomeBinding
+import com.example.eyecon.ui.addphoto.AddPhotoViewModel
+import com.example.eyecon.ui.addphoto.AddPhotoViewModelFactory
 import com.example.eyecon.ui.game.GamesActivity
 import com.example.eyecon.ui.gemini.GeminiChatbotActivity
 import com.example.eyecon.ui.profile.ProfileActivity
@@ -34,6 +35,23 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var newsAdapter: NewsHomeAdapter
     private val auth = FirebaseAuth.getInstance()
+    private val historyViewModel by viewModels<AddPhotoViewModel>{
+        AddPhotoViewModelFactory.getInstance(requireActivity())
+    }
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun setEventData(data: List<HistoryEntity>) {
+        val adapter = HistoryHorizontalAdapter()
+        adapter.submitList(data.take(5))
+
+        binding.rvHistoryHorizontal.adapter = adapter
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,6 +59,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -52,10 +71,25 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        val layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvHistoryHorizontal.layoutManager = layoutManager
+
+
+
+        historyViewModel.isLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
+        }
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        historyViewModel.getHistoryByUserId(currentUser!!.uid)
+        historyViewModel.listHistory.observe(viewLifecycleOwner) {
+            setEventData(it)
+        }
+
         binding.geminibot.setOnClickListener {
             val intent = Intent(requireActivity(), GeminiChatbotActivity::class.java)
             startActivity(intent)
         }
+
 
 
         setupNewsRecyclerView()
