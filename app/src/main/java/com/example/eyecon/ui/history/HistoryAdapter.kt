@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.eyecon.data.photo.local.entity.HistoryEntity
 import com.example.eyecon.databinding.ItemHistoryBinding
-import com.example.eyecon.ui.detail.ResultActivity
 import com.example.eyecon.ui.history.HistoryResultActivity.Companion.EXTRA_ID
 
 class HistoryAdapter : ListAdapter<HistoryEntity, HistoryAdapter.HistoryViewHolder>(diffCallback) {
@@ -18,7 +17,7 @@ class HistoryAdapter : ListAdapter<HistoryEntity, HistoryAdapter.HistoryViewHold
         fun bind(history: HistoryEntity) {
 
             binding.tvItemResult.text = history.result
-            binding.tvItemCreatedat.text = history.createdAt
+            binding.tvItemCreatedat.text = formatDate(history.createdAt)
             Glide.with(itemView.context)
                 .load(history.imgUrl)
                 .into(binding.imgItemPhoto)

@@ -1,19 +1,14 @@
 package com.example.eyecon.data.photo.remote
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import com.example.eyecon.data.photo.local.entity.HistoryEntity
 import com.example.eyecon.data.photo.local.room.HistoryDao
 import com.example.eyecon.data.photo.remote.response.Data
 import com.example.eyecon.data.photo.remote.response.DataItem
-import com.example.eyecon.data.photo.remote.response.DetailResponse
-import com.example.eyecon.data.photo.remote.response.PhotoResponse
 import com.example.eyecon.data.photo.remote.retrofit.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import retrofit2.http.Part
 
 class PhotoRepository private constructor(
     private val apiService: ApiService,
