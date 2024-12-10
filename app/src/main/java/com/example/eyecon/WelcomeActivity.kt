@@ -1,7 +1,6 @@
 package com.example.eyecon
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
@@ -34,15 +33,12 @@ class WelcomeActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
-
         supportActionBar?.hide()
 
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
 
-
         if (isLoggedIn) {
-            // If the user is logged in, navigate directly to MainActivity
             navigateToMainActivity()
         }
         val window: Window = window
@@ -53,6 +49,6 @@ class WelcomeActivity : AppCompatActivity() {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         }
         startActivity(intent)
-        finish() // Optional: This will close the WelcomeActivity so it doesn't stay in the back stack
+        finish()
     }
 }

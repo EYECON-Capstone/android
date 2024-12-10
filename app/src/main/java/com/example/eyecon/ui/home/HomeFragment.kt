@@ -25,7 +25,6 @@ import com.example.eyecon.ui.addphoto.AddPhotoViewModelFactory
 import com.example.eyecon.ui.game.GamesActivity
 import com.example.eyecon.ui.gemini.GeminiChatbotActivity
 import com.example.eyecon.ui.profile.ProfileActivity
-import com.example.eyecon.ui.news.NewsHomeAdapter
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
@@ -89,8 +88,6 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireActivity(), GeminiChatbotActivity::class.java)
             startActivity(intent)
         }
-
-
 
         setupNewsRecyclerView()
         setupProfileSection()
@@ -182,10 +179,9 @@ class HomeFragment : Fragment() {
                 .setPositiveButton("Ya") { _, _ ->
                     val sharedPreferences = requireContext().getSharedPreferences("user_prefs", MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
-                    editor.clear()  // Menghapus data login
+                    editor.clear()
                     editor.apply()
 
-                    // Logout dari Firebase
                     auth.signOut()
                     Toast.makeText(requireContext(), "Berhasil keluar", Toast.LENGTH_SHORT).show()
                     val intent = Intent(requireContext(), LoginActivity::class.java)

@@ -87,6 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:fontFamily="@font/inter_reguler"
+                    android:justificationMode="inter_word"
                     android:text="@string/diagnosa_title"
                     android:textColor="@color/textDark"
                     android:textSize="14sp" />

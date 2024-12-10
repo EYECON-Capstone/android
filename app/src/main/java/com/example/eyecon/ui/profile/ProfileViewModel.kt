@@ -27,13 +27,13 @@ class ProfileViewModel : ViewModel() {
 
     fun showusername() {
         val user = auth.currentUser
-        _username.value = user?.displayName ?: "User" // Default ke "User" jika tidak ada
+        _username.value = user?.displayName ?: "User"
     }
 
     fun showphoto() {
         val user = auth.currentUser
         Log.d("ProfileViewModel", "Photo URL: ${user?.photoUrl}")
-        _profilePhotoUrl.value = user?.photoUrl // Atau set default URL jika tidak ada
+        _profilePhotoUrl.value = user?.photoUrl
     }
 
     fun updateProfilePhoto(uri: Uri) {
@@ -44,7 +44,7 @@ class ProfileViewModel : ViewModel() {
 
         user?.updateProfile(profileUpdates)?.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                _profilePhotoUrl.value = uri // Perbarui nilai LiveData
+                _profilePhotoUrl.value = uri
             }
         }
     }
@@ -57,7 +57,7 @@ class ProfileViewModel : ViewModel() {
 
         user?.updateProfile(profileUpdates)?.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                _username.value = newUsername // Perbarui nilai LiveData
+                _username.value = newUsername
             }
         }
     }
