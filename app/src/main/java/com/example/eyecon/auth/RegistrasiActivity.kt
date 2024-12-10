@@ -1,7 +1,6 @@
 package com.example.eyecon.auth
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.Window
@@ -30,7 +29,6 @@ class RegistrasiActivity : AppCompatActivity() {
             val email = binding.email.text.toString().trim()
             val password = binding.password.text.toString().trim()
 
-            // Input validation
             if (username.isEmpty()) {
                 binding.username.error = "Please enter a username"
                 binding.username.requestFocus()
@@ -55,11 +53,9 @@ class RegistrasiActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Register the user
             registerUser(username, email, password)
         }
 
-        // Navigate to login if the user already has an account
         binding.login.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK

@@ -18,9 +18,6 @@ import com.google.firebase.auth.FirebaseAuth
 class HistoryFragment : Fragment() {
 
     private var _binding: FragmentHistoryBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private val historyViewModel by viewModels<AddPhotoViewModel>{
         AddPhotoViewModelFactory.getInstance(requireActivity())
@@ -42,17 +39,14 @@ class HistoryFragment : Fragment() {
     private fun handleDeleteAction() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         currentUser?.uid?.let { userId ->
-            // Show confirmation dialog before proceeding with deletion
             val dialogBuilder = AlertDialog.Builder(requireContext())
             dialogBuilder.setMessage("Apakah anda yakin ingin menghapus semua history?")
                 .setCancelable(false)
                 .setPositiveButton("Ya") { dialog, _ ->
-                    // If user confirms, call the deleteHistory method in ViewModel
                     historyViewModel.deleteHistory(userId)
                     dialog.dismiss()
                 }
                 .setNegativeButton("Tidak") { dialog, _ ->
-                    // If user cancels, dismiss the dialog
                     dialog.dismiss()
                 }
 
@@ -71,11 +65,8 @@ class HistoryFragment : Fragment() {
 
         historyViewModel.isDeleted.observe(viewLifecycleOwner) { isDeleted ->
             if (isDeleted) {
-                // Successfully deleted, update UI or show a message
-
                 historyViewModel.getHistoryByUserId(FirebaseAuth.getInstance().currentUser!!.uid)
             } else {
-                // Failed to delete, show error message
                 Toast.makeText(requireContext(), "Failed to delete history", Toast.LENGTH_SHORT).show()
             }
         }
@@ -83,10 +74,8 @@ class HistoryFragment : Fragment() {
         binding.hapus.setOnClickListener {
             val historyList = historyViewModel.listHistory.value
             if (historyList.isNullOrEmpty()) {
-                // Show a toast if the history list is empty
                 Toast.makeText(requireContext(), "History is empty", Toast.LENGTH_SHORT).show()
             } else {
-                // Trigger the delete action when "hapus" is clicked
                 handleDeleteAction()
             }
         }

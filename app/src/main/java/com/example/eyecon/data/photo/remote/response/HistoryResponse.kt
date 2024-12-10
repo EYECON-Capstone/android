@@ -2,15 +2,6 @@ package com.example.eyecon.data.photo.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class HistoryResponse(
-
-	@field:SerializedName("data")
-	val data: List<DataItemHistory>,
-
-	@field:SerializedName("status")
-	val status: String
-)
-
 data class DataItemHistory(
 
 	@field:SerializedName("result")

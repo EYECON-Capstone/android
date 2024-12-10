@@ -1,7 +1,6 @@
 package com.example.eyecon.auth
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.Window
@@ -31,13 +30,10 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         supportActionBar?.hide()
 
-
-        // Login button click listener
         binding.loginButton.setOnClickListener {
             val email = binding.email.text.toString().trim()
             val password = binding.password.text.toString().trim()
 
-            // Input validation
             if (email.isEmpty()) {
                 binding.email.error = "Please enter an email"
                 binding.email.requestFocus()
@@ -56,13 +52,11 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Attempt login
             loginUser(email, password)
         }
         val window: Window = window
         window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
 
-        // Sign up text click listener
         binding.daftar.setOnClickListener {
             val intent = Intent(this, RegistrasiActivity::class.java).apply {
                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
@@ -83,23 +77,18 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user: FirebaseUser? = auth.currentUser
-                    val displayName = user?.displayName ?: "User" // Default ke "User" jika nama tidak tersedia
+                    val displayName = user?.displayName ?: "User"
 
-                    // Tampilkan toast dengan nama pengguna
                     Toast.makeText(this, "Welcome, $displayName!", Toast.LENGTH_SHORT).show()
-
-//                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                    //Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                     val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
-                    editor.putBoolean("isLoggedIn", true)  // Menyimpan status login
+                    editor.putBoolean("isLoggedIn", true)
                     editor.apply()
                     startActivity(Intent(this, BoardingActivity::class.java))
                     finish()
                 } else {
-                    // Login failed, check the specific error
                     val errorMessage = when (task.exception) {
-                        is FirebaseAuthInvalidUserException -> "Email not registere"
+                        is FirebaseAuthInvalidUserException -> "Email not registered"
                         is FirebaseAuthInvalidCredentialsException -> "Incorrect password"
                         else -> "Login failed: ${task.exception?.message}"
                     }
