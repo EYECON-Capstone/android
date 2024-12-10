@@ -3,12 +3,9 @@ package com.example.eyecon.ui.history
 import android.os.Build
 import android.os.Bundle
 import android.view.Window
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.eyecon.R

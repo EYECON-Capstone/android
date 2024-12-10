@@ -12,8 +12,6 @@ import com.google.ai.client.generativeai.GenerativeModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.google.ai.client.generativeai.type.content
-import com.google.ai.client.generativeai.type.generationConfig
 
 class GeminiChatbotActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGeminiChatbotBinding

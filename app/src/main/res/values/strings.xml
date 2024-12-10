@@ -16,21 +16,18 @@
     <string name="reset">Reset</string>
     <string name="reset_password">Reset Password</string>
     <string name="fill_email">Fill your email</string>
-    <string name="login_dengan">Login dengan</string>
     <string name="title_home">Home</string>
     <string name="title_diagnosa">Diagnosa</string>
     <string name="title_history">History</string>
     <string name="default_web_client_id">228102642507-3h9gb6li1k1iou8e903555sei4pe3v9b.apps.googleusercontent.com</string>
     <string name="login_kembali">Login Kembali?</string>
     <string name="welcome_text">Welcome to Eyecon! We’re thrilled to have you with us. At Eyecon, we’re dedicated to helping you understand the importance of eye health in the digital age. Enjoy exploring our features designed to monitor and improve your eye health. Remember, healthy eyes are invaluable, and we’re here to support you on that journey.</string>
-    <string name="next">Next</string>
     <string name="title_menu_1">Take Photo on Your Eyes</string>
     <string name="title_menu_2">Reading a News</string>
     <string name="title_menu_3">Save Your History</string>
     <string name="desc_menu_1">Welcome! This eye scan feature helps you monitor your eye health easily. Just take photo on your eyes.</string>
     <string name="desc_menu_2">"Ready to explore? Tap ‘News’ to get started or see the latest news and updates about eyes."</string>
     <string name="desc_menu_3">Your history is organized chronologically, making it easy to revisit your past activities and pick up right where you left off.</string>
-    <string name="learn_now">Belajar Sekarang</string>
     <string name="mulai">Mulai</string>
     <string name="special_for_you">Special for you</string>
     <string name="good_day">Good Day,</string>
@@ -43,7 +40,6 @@
 
     <string name="diagnosa_title">Diagnosa</string>
     <string name="rekomendasi">Rekomendasi</string>
-    <string name="about_condition">Mengenai Kondisi</string>
 
     <!-- Mata Merah -->
     <string name="red_eye_title">Mata Merah</string>
@@ -62,63 +58,54 @@
     <!-- Mata Minus -->
     <string name="myopia_title">Mata Minus (Miopia)</string>
     <string name="myopia_desc">Miopi, atau rabun jauh, adalah kondisi mata yang kesulitan melihat objek jauh dengan jelas, namun dapat melihat objek dekat dengan baik. Hal ini terjadi ketika bola mata terlalu panjang atau lensa mata terlalu melengkung, sehingga cahaya yang masuk difokuskan di depan retina. Gejala miopi meliputi penglihatan kabur pada objek jauh, kesulitan melihat tanda jalan, papan tulis, atau televisi dari jarak jauh. Miopi dapat diperbaiki dengan penggunaan kacamata, lensa kontak, atau prosedur bedah refraktif seperti LASIK.</string>
-    <string name="myopia_subtitle">Kondisi yang umum terjadi</string>
     <string name="myopia_rec1">Kacamata minus</string>
     <string name="myopia_rec2">Istirahatkan mata</string>
 
     <!-- Mata Plus -->
     <string name="hyperopia_title">Mata Plus (Hiperopia)</string>
     <string name="hyperopia_desc">Hiperopia, atau rabun dekat, adalah kondisi mata yang kesulitan melihat objek dekat dengan jelas, tetapi dapat melihat objek jauh dengan baik. Hal ini terjadi ketika bola mata terlalu pendek atau lensa mata terlalu datar, sehingga cahaya yang masuk ke mata tidak difokuskan dengan benar pada retina. Gejala umum hiperopia termasuk penglihatan kabur pada objek dekat, kesulitan membaca atau melihat detail kecil, serta kelelahan mata atau sakit kepala saat melakukan aktivitas dekat. Hiperopia dapat diperbaiki dengan penggunaan kacamata, lensa kontak, atau prosedur bedah refraktif seperti LASIK.</string>
-    <string name="hyperopia_subtitle">Kondisi yang umum terjadi</string>
     <string name="hyperopia_rec1">Kacamata plus</string>
     <string name="hyperopia_rec2">Pemeriksaan rutin</string>
 
     <!-- Astigmatisme -->
     <string name="astigmatism_title">Astigmatisme</string>
     <string name="astigmatism_desc">Astigmatisme adalah kelainan pada kornea mata yang menyebabkan pandangan menjadi kabur atau terdistorsi pada semua jarak. Kondisi ini terjadi ketika bentuk kornea atau lensa mata tidak simetris, sehingga cahaya yang masuk ke mata tidak fokus dengan benar pada retina. Gejala astigmatisme meliputi penglihatan kabur atau terdistorsi, sering merasa lelah atau sakit kepala setelah membaca atau melihat objek dalam waktu lama, dan kesulitan melihat dengan jelas pada berbagai jarak. Astigmatisme dapat diperbaiki dengan penggunaan kacamata, lensa kontak, atau operasi refraktif seperti LASIK.</string>
-    <string name="astigmatism_subtitle">Kondisi yang umum terjadi</string>
     <string name="astigmatism_rec1">Kacamata silinder</string>
     <string name="astigmatism_rec2">Operasi laser</string>
 
     <!-- Katarak -->
     <string name="cataract_title">Katarak</string>
     <string name="cataract_desc">Katarak adalah kondisi di mana lensa mata menjadi keruh, yang menyebabkan pandangan kabur dan meningkatkan sensitivitas terhadap cahaya. Hal ini sering terjadi secara bertahap seiring bertambahnya usia, tetapi juga bisa dipicu oleh cedera, penyakit tertentu (seperti diabetes), atau penggunaan obat-obatan tertentu. Gejala katarak meliputi penglihatan buram, kesulitan melihat di malam hari, dan perubahan dalam persepsi warna. Katarak dapat diatasi dengan prosedur bedah untuk mengganti lensa mata yang keruh dengan lensa buatan.</string>
-    <string name="cataract_subtitle">Kondisi yang umum terjadi</string>
     <string name="cataract_rec1">Operasi katarak</string>
     <string name="cataract_rec2">Gunakan kacamata hitam</string>
 
     <!-- Glaukoma -->
     <string name="glaucoma_title">Glaukoma</string>
     <string name="glaucoma_desc">Glaukoma adalah kondisi yang ditandai dengan peningkatan tekanan dalam bola mata (tekanan intraokular) yang dapat merusak saraf optik. Kerusakan ini berpotensi menyebabkan kehilangan penglihatan secara bertahap dan, jika tidak ditangani, kebutaan permanen. Glaukoma sering kali berkembang tanpa gejala pada tahap awal, namun pada tahap lanjut dapat menyebabkan penglihatan tepi yang menyempit (tunnel vision). Faktor risiko meliputi usia lanjut, riwayat keluarga, dan kondisi medis tertentu seperti diabetes atau hipertensi. Penanganan meliputi obat tetes mata, terapi laser, atau operasi untuk mengontrol tekanan intraokular dan mencegah kerusakan lebih lanjut.</string>
-    <string name="glaucoma_subtitle">Kondisi yang cukup jarang terjadi</string>
     <string name="glaucoma_rec1">Obat tetes mata</string>
     <string name="glaucoma_rec2">Monitor tekanan mata</string>
 
     <!-- Mata Kering -->
     <string name="dry_eye_title">Mata Kering</string>
     <string name="dry_eye_desc">Sindrom mata kering adalah kondisi di mana mata tidak menghasilkan air mata yang cukup atau air mata menguap terlalu cepat, sehingga menyebabkan permukaan mata menjadi kering dan teriritasi. Penyebabnya meliputi penuaan, penggunaan lensa kontak, paparan angin atau udara kering, gangguan kesehatan tertentu (seperti sindrom Sjögren), atau efek samping obat-obatan. Gejala mencakup rasa kering, gatal, sensasi terbakar, kemerahan, penglihatan kabur, dan sensitivitas terhadap cahaya. Penanganan dapat berupa penggunaan tetes mata buatan, perubahan gaya hidup, atau perawatan medis untuk meningkatkan produksi atau mempertahankan air mata.</string>
-    <string name="dry_eye_subtitle_subtitle">Kondisi yang umum terjadi</string>
     <string name="dry_eye_rec1">Tetes air mata buatan</string>
     <string name="dry_eye_rec2">Menjaga kelembaban ruangan</string>
 
     <!-- Strabismus -->
     <string name="strabismus_title">Strabismus (Juling)</string>
     <string name="strabismus_desc">Strabismus, atau mata juling, adalah kondisi di mana kedua mata tidak sejajar dan mengarah ke arah yang berbeda, misalnya satu mata menghadap lurus ke depan sementara mata lainnya mengarah ke dalam, luar, atas, atau bawah. Kondisi ini dapat terjadi secara terus-menerus atau hanya sesekali, dan biasanya disebabkan oleh ketidakseimbangan otot-otot yang menggerakkan mata, gangguan saraf, atau masalah refraksi. Strabismus dapat mengganggu penglihatan binokular dan menyebabkan ambliopia (mata malas) jika tidak ditangani. Penanganan meliputi penggunaan kacamata, terapi mata, atau operasi otot mata.</string>
-    <string name="strabismus_subtitle">Kondisi yang umum terjadi</string>
     <string name="strabismus_rec1">Operasi otot mata</string>
     <string name="strabismus_rec2">Latihan mata</string>
 
     <!-- Retinopati -->
     <string name="retinopathy_title">Retinopati</string>
     <string name="retinopathy_desc">Retinopati diabetik adalah kerusakan pada pembuluh darah retina yang sering terjadi pada penderita diabetes akibat kadar gula darah yang tinggi dalam jangka panjang. Kondisi ini dapat menyebabkan pembuluh darah retina bocor, tersumbat, atau tumbuh secara abnormal. Gejala meliputi penglihatan kabur, munculnya bintik-bintik gelap (floaters), hingga kehilangan penglihatan jika tidak segera ditangani. Retinopati diabetik merupakan salah satu penyebab utama kebutaan, namun dapat dicegah atau diperlambat perkembangannya dengan pengelolaan diabetes yang baik.</string>
-    <string name="retinopathy_subtitle">Kondisi yang cukup jarang terjadi</string>
     <string name="retinopathy_rec1">Terapi laser</string>
     <string name="retinopathy_rec2">Kontrol gula darah</string>
 
     <!-- Keratitis -->
     <string name="keratitis_title">Keratitis</string>
     <string name="keratitis_desc">Keratitis adalah peradangan pada kornea mata yang dapat disebabkan oleh infeksi, seperti bakteri, virus, jamur, atau parasit, serta oleh cedera, penggunaan lensa kontak yang tidak tepat, atau paparan bahan kimia. Gejala keratitis meliputi nyeri mata, kemerahan, penglihatan kabur, sensasi seperti ada benda asing di mata, dan sensitivitas terhadap cahaya. Jika tidak ditangani dengan tepat, keratitis dapat menyebabkan komplikasi serius, termasuk ulkus kornea atau kehilangan penglihatan.</string>
-    <string name="keratitis_subtitle">Kondisi yang umum terjadi</string>
     <string name="keratitis_rec1">Antibiotik</string>
     <string name="keratitis_rec2">Jaga kebersihan mata</string>
 
@@ -132,21 +119,18 @@
     <!-- Uveitis -->
     <string name="uveitis_title">Uveitis</string>
     <string name="uveitis_desc">Uveitis adalah peradangan pada lapisan tengah mata (uvea) yang dapat menyebabkan nyeri, kemerahan, sensitivitas terhadap cahaya, dan penglihatan kabur. Kondisi ini dapat disebabkan oleh infeksi, gangguan autoimun, atau cedera mata, serta kadang tidak diketahui penyebabnya. Jika tidak segera ditangani, uveitis dapat menyebabkan komplikasi serius seperti glaukoma, katarak, atau kehilangan penglihatan permanen.</string>
-    <string name="uveitis_subtitle">Kondisi yang umum terjadi</string>
     <string name="uveitis_rec1">Obat steroid</string>
     <string name="uveitis_rec2">Hindari cahaya terang</string>
 
     <!-- Presbiopi -->
     <string name="presbyopia_title">Presbiopi</string>
     <string name="presbyopia_desc">Presbiopi merupakan kondisi gangguan penglihatan yang ditandai dengan kesulitan untuk memfokuskan pandangan pada objek dekat, terutama saat membaca atau melihat detail kecil. Kondisi ini umumnya mulai muncul pada usia sekitar 40 tahun ke atas dan disebabkan oleh menurunnya elastisitas lensa mata akibat proses penuaan alami. Akibatnya, kemampuan lensa untuk berubah bentuk guna memfokuskan cahaya pada retina menjadi berkurang. Gejala presbiopi meliputi pandangan buram pada jarak dekat, kebutuhan untuk menjauhkan objek agar terlihat jelas, dan sering merasa lelah atau sakit kepala setelah membaca atau melakukan aktivitas visual dekat. Diagnosis biasanya dilakukan melalui pemeriksaan mata oleh dokter spesialis mata, dan pengobatan yang umum digunakan meliputi penggunaan kacamata baca, lensa kontak multifokal, atau prosedur bedah refraktif sesuai kebutuhan pasien.</string>
-    <string name="presbyopia_subtitle">Kondisi yang umum terjadi</string>
     <string name="presbyopia_rec1">Kacamata baca</string>
     <string name="presbyopia_rec2">Pencahayaan yang baik</string>
 
     <!-- Pterigium -->
     <string name="pterygium_title">Pterigium</string>
     <string name="pterygium_desc">Pterigium adalah kondisi di mana jaringan fibrovaskular tumbuh secara tidak normal pada konjungtiva, yaitu bagian putih mata, dan dapat meluas hingga menutupi kornea. Kondisi ini umumnya berbentuk segitiga dengan ujung mengarah ke tengah kornea. Pterigium sering kali disebabkan oleh paparan sinar ultraviolet (UV) yang berlebihan, terutama pada individu yang sering berada di bawah sinar matahari tanpa perlindungan mata yang memadai. Faktor lain yang dapat meningkatkan risiko termasuk iritasi kronis akibat angin, debu, atau polusi. Gejala pterigium meliputi kemerahan, rasa gatal, sensasi seperti ada benda asing di mata, hingga gangguan penglihatan jika jaringan menutupi kornea. Diagnosis dilakukan melalui pemeriksaan fisik oleh dokter mata, dan pengobatan bervariasi mulai dari penggunaan obat tetes mata untuk mengurangi iritasi hingga tindakan bedah untuk mengangkat jaringan jika mengganggu fungsi penglihatan.</string>
-    <string name="pterygium_subtitle">Kondisi yang jarang terjadi</string>
     <string name="pterygium_rec1">Kacamata UV</string>
     <string name="pterygium_rec2">Tetes air mata</string>
 
@@ -158,24 +142,17 @@
     <string name="retinoblastoma_rec2">Pemeriksaan mata rutin</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="gallery">Gallery</string>
-    <string name="analyze">Analyze</string>
     <string name="image">Image</string>
     <string name="scan">Mulai Scan</string>
     <string name="result">Result</string>
     <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
-    <string name="widget_default_text">Ayo Cek Diagnosa Terkait!</string>
     <string name="widget_name">Diagnosa - EYECON</string>
 
     <string name="detail_diagnosa">Detail Diagnosa</string>
     <string name="error_loading_diagnosa">Gagal memuat data diagnosa</string>
     <string name="retry">Coba Lagi</string>
 
-    <string name="one_time_alarm">One Time Alarm</string>
-    <string name="alarm_date">Tanggal Alarm</string>
-    <string name="set_one_time_alarm">Set One Time Alarm</string>
-    <string name="alarm_message">Pesan Alarm</string>
     <string name="repeating_alarm">Atur Pengingat</string>
     <string name="set_repeating_alarm">Set Alarm</string>
     <string name="cancel_alarm">Cancel Alarm</string>
@@ -186,4 +163,11 @@
     <string name="gemini">Gemini</string>
     <string name="createdAt">Created At</string>
     <string name="hapus">Hapus</string>
+    <string name="boarding">Boarding</string>
+    <string name="ketikkan_pesan_untuk_gemini">Ketikkan pesan untuk Gemini...</string>
+    <string name="send_message">Send message</string>
+    <string name="empty_data">Tidak ada data</string>
+    <string name="cek_diagnosa">Cek hasil diagnosa yang relevan, yuk!</string>
+    <string name="out">Keluar</string>
+    <string name="play_button">Play button</string>
 </resources>
