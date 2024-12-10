@@ -12,17 +12,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.google.android.material.progressindicator.LinearProgressIndicator
+        <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminate="true"
             android:visibility="gone"
-            app:indicatorColor="@color/black"
-            app:trackColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:indeterminateTint="#396357"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
+
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -53,7 +51,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginHorizontal="16dp"
                     android:fontFamily="@font/inter_bold"
-                    android:text="Result_text"
+                    android:text="@string/result"
                     android:gravity="start"
                     android:textColor="@color/textDark"
                     android:textSize="20sp" />
@@ -64,7 +62,7 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginHorizontal="16dp"
                     android:fontFamily="@font/inter_bold"
-                    android:text="Rekomendasi"
+                    android:text="@string/rekomendasi"
                     android:textColor="@color/textDark"
                     android:textSize="16sp" />
 
@@ -82,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:fontFamily="@font/inter_bold"
-                    android:text="Diagnosa"
+                    android:text="@string/diagnosa_title"
                     android:textColor="@color/textDark"
                     android:textSize="16sp" />
 
@@ -95,7 +93,7 @@
                     android:layout_marginBottom="24dp"
                     android:fontFamily="@font/inter_reguler"
                     android:justificationMode="inter_word"
-                    android:text="Diagnosis_text"
+                    android:text="@string/detail_diagnosa"
                     android:textColor="@color/textDark"
                     android:textSize="14sp" />
 
