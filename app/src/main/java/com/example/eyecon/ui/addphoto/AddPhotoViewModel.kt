@@ -23,12 +23,6 @@ class AddPhotoViewModel(private val photoRepository: PhotoRepository): ViewModel
     private val _isDeleted = MutableLiveData<Boolean>()
     val isDeleted: LiveData<Boolean> get() = _isDeleted
 
-    private val _predict = MutableLiveData<Boolean>()
-    val predict: LiveData<Boolean> get() = _predict
-
-    private val _errorMessage = MutableLiveData<String?>()
-    val errorMessage: LiveData<String?> = _errorMessage
-
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -59,9 +53,7 @@ class AddPhotoViewModel(private val photoRepository: PhotoRepository): ViewModel
             result.onSuccess {
                 Log.d("AddPhotoViewModel", "Prediction successful")
                 _resultData.value = it // DataItem
-                _predict.value = true
             }.onFailure {
-                _predict.value = false
                 Log.e("AddPhotoViewModel", "Prediction failed: ${it.message}")
             }
         }
@@ -79,7 +71,6 @@ class AddPhotoViewModel(private val photoRepository: PhotoRepository): ViewModel
                 photoRepository.deleteHistory(idUser)
                 _isDeleted.value = true
             } catch (e: Exception) {
-                _errorMessage.value = e.message
                 _isDeleted.value = false
             }
         }
@@ -100,9 +91,6 @@ class AddPhotoViewModel(private val photoRepository: PhotoRepository): ViewModel
         }
     }
 
-    fun clearErrorMessage() {
-        _errorMessage.value = null
-    }
 }
 class AddPhotoViewModelFactory(private val photoRepository: PhotoRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

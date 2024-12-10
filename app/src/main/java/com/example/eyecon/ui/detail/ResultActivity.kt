@@ -42,10 +42,8 @@ class ResultActivity : AppCompatActivity() {
 
         // Setup action bar and status bar
         supportActionBar?.title = "Results"
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val window: Window = window
-            window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
-        }
+        val window: Window = window
+        window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
 
         // Setup RecyclerView for recommendations
         rekomendasiAdapter = RekomendasiAdapter()
@@ -61,9 +59,9 @@ class ResultActivity : AppCompatActivity() {
         }
 
         // Observe loading state
-        addPhotoViewModel.isLoading.observe(this, Observer { isLoading ->
+        addPhotoViewModel.isLoading.observe(this) { isLoading ->
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-        })
+        }
 
         // Observe result data
         addPhotoViewModel.resultData.observe(this) { data ->
@@ -143,13 +141,10 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
-    private fun formatDateTime(timestamp: Long): String {
-        val sdf = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
-        return sdf.format(Date(timestamp))
-    }
+
 
     companion object {
         const val EXTRA_IMAGE_URI = "extra_image_uri"
-        const val EXTRA_ID = "extra_id"
+
     }
 }
