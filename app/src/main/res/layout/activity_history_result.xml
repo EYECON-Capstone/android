@@ -30,6 +30,7 @@
             android:background="@color/backgroundDark"
             android:padding="16dp"
             android:scaleType="fitCenter"
+            android:contentDescription="@string/title_history"
             app:srcCompat="@drawable/baseline_image_24" />
 
         <TextView

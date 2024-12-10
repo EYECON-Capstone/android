@@ -18,22 +18,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.example.eyecon.R
-import com.example.eyecon.data.photo.remote.PhotoRepository
 import com.example.eyecon.databinding.FragmentAddPhotoBinding
 import com.example.eyecon.ui.CameraActivity
 import com.example.eyecon.ui.detail.ResultActivity
-import com.example.eyecon.utils.reduceFileImage
-import com.example.eyecon.utils.uriToFile
-import com.google.firebase.auth.FirebaseAuth
-import okhttp3.MediaType
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.asRequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
-import java.io.File
+
 
 
 class AddPhotoFragment : Fragment() {

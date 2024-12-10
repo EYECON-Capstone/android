@@ -12,9 +12,6 @@ import com.example.eyecon.data.photo.local.entity.HistoryEntity
 import com.example.eyecon.data.photo.remote.PhotoRepository
 import com.example.eyecon.data.photo.remote.response.Data
 import com.example.eyecon.data.photo.remote.response.DataItem
-import com.example.eyecon.data.photo.remote.response.DetailResponse
-import com.example.eyecon.data.photo.remote.response.PhotoResponse
-import com.example.eyecon.data.photo.remote.retrofit.ApiService
 import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
 import okhttp3.RequestBody

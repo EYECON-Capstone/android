@@ -10,8 +10,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
-import com.bumptech.glide.Glide
 import com.example.eyecon.R
 import com.example.eyecon.data.photo.local.entity.HistoryEntity
 import com.example.eyecon.databinding.ActivityResultBinding
@@ -20,7 +18,6 @@ import com.example.eyecon.ui.addphoto.AddPhotoViewModelFactory
 import com.example.eyecon.utils.reduceFileImage
 import com.example.eyecon.utils.uriToFile
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody

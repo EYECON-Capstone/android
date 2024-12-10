@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.eyecon.data.photo.local.entity.HistoryEntity
-import com.example.eyecon.databinding.ItemHistoryBinding
 import com.example.eyecon.databinding.ItemRowHistoryBinding
 import com.example.eyecon.ui.history.HistoryResultActivity
 import com.example.eyecon.ui.history.HistoryResultActivity.Companion.EXTRA_ID
