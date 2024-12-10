@@ -34,11 +34,14 @@ class HomeViewModel : ViewModel() {
                 _error.value = null
 
                 val response = RetrofitClient.newsApiService.getNews(
-                    query = "mata kesehatan",
+                    query = "mata",
                     apiKey = apiKey
                 )
-
-                _newsArticles.value = response.articles
+                val filteredArticles = response.articles.filter { article ->
+                    (article.title?.contains("mata", ignoreCase = true) == true) && (article.title?.contains("manis", ignoreCase = true) != true) &&
+                            (article.description?.contains("mata", ignoreCase = true) == true)
+                }
+                _newsArticles.value = filteredArticles
                 _isLoading.postValue(false)
             } catch (e: Exception) {
                 _error.value = "Failed to load news: ${e.localizedMessage}"

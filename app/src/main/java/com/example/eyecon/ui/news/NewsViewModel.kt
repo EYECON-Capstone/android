@@ -25,7 +25,12 @@ class NewsViewModel : ViewModel() {
                 val response = RetrofitClient.newsApiService.getNews(
                     apiKey = "34fcaf6fe9ff47f9831dd7297461d892"
                 )
-                _newsState.value = response.articles
+                val filteredArticles = response.articles.filter { article ->
+                    (article.title?.contains("mata", ignoreCase = true) == true) && (article.title?.contains("manis", ignoreCase = true) != true) &&
+                            (article.description?.contains("mata", ignoreCase = true) == true)
+                }
+
+                _newsState.value = filteredArticles
             } catch (e: Exception) {
                 _errorState.value = e.message
             } finally {
