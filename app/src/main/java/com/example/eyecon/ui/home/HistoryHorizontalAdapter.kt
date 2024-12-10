@@ -12,27 +12,24 @@ import com.example.eyecon.data.photo.local.entity.HistoryEntity
 import com.example.eyecon.databinding.ItemRowHistoryBinding
 import com.example.eyecon.ui.history.HistoryResultActivity
 import com.example.eyecon.ui.history.HistoryResultActivity.Companion.EXTRA_ID
+import com.example.eyecon.ui.history.formatDate
 
 class HistoryHorizontalAdapter : ListAdapter<HistoryEntity, HistoryHorizontalAdapter.HistoryViewHolder>(diffCallback) {
     class HistoryViewHolder(private val binding: ItemRowHistoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(history: HistoryEntity) {
-
             binding.title.text = history.result
-            binding.createdat.text = history.createdAt
+            binding.createdat.text = formatDate(history.createdAt)
             Glide.with(itemView.context)
                 .load(history.imgUrl)
                 .transform(CircleCrop())
                 .into(binding.image)
-
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, HistoryResultActivity::class.java)
                 intent.putExtra(EXTRA_ID, history.id)
                 itemView.context.startActivity(intent)
             }
-
-
         }
     }
 
