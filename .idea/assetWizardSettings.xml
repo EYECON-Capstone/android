@@ -306,7 +306,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/C:/Users/M%20Sutan%20Fathir/AppData/Local/Android/Sdk/icons/material/materialicons/settings/baseline_settings_24.xml" />
+                                      <entry key="url" value="file:/C:/Users/M%20Sutan%20Fathir/AppData/Local/Android/Sdk/icons/material/materialicons/circle/baseline_circle_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -316,8 +316,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="baseline_settings_24" />
+                            <entry key="color" value="396357" />
+                            <entry key="outputName" value="ic_circle_full_24" />
                             <entry key="sourceFile" value="D:\Dicoding\Capstone" />
                           </map>
                         </option>
