@@ -9,13 +9,14 @@
     <!-- TextView above RecyclerView -->
     <TextView
         android:id="@+id/hapus"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hapus"
         android:textSize="15sp"
         android:textColor="@color/white"
         android:fontFamily="@font/inter_bold"
         android:layout_margin="8dp"
+        android:gravity="center"
         android:background="@drawable/rounded_out"
         app:layout_constraintBottom_toTopOf="@id/rv_history"
         app:layout_constraintStart_toStartOf="parent"

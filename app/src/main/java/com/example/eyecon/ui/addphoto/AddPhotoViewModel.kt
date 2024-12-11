@@ -43,28 +43,41 @@ class AddPhotoViewModel(private val photoRepository: PhotoRepository): ViewModel
     }
     fun predictphoto(
         image: MultipartBody.Part,
-        idUser: RequestBody,
+        idUser: RequestBody
     ) {
-        _isLoading.value = true
-
         viewModelScope.launch {
-            Log.d("AddPhotoViewModel", "Sending image for prediction...")
-            val result = photoRepository.predictphoto(image, idUser)
-            result.onSuccess {
-                Log.d("AddPhotoViewModel", "Prediction successful")
-                _resultData.value = it // DataItem
-            }.onFailure {
-                Log.e("AddPhotoViewModel", "Prediction failed: ${it.message}")
+            try {
+                _isLoading.value = true // Mengaktifkan indikator loading sebelum proses dimulai
+                Log.d("AddPhotoViewModel", "Sending image for prediction...")
+
+                val result = photoRepository.predictphoto(image, idUser)
+                result.onSuccess {
+                    Log.d("AddPhotoViewModel", "Prediction successful")
+                    _resultData.value = it // DataItem
+                }.onFailure {
+                    Log.e("AddPhotoViewModel", "Prediction failed: ${it.message}")
+                }
+            } catch (e: Exception) {
+                Log.e("AddPhotoViewModel", "An error occurred: ${e.message}")
+            } finally {
+                _isLoading.value = false // Mematikan indikator loading setelah proses selesai
             }
         }
-        _isLoading.value = false
-
     }
     fun getDetailPhoto(id: String) {
         viewModelScope.launch {
-            _detailphoto.value =photoRepository.getDetailPhoto(id)
+            try {
+                _isLoading.value = true // Turn on loading indicator before the network call
+                val result = photoRepository.getDetailPhoto(id)
+                _detailphoto.value = result
+            } catch (e: Exception) {
+                Log.e("AddPhotoViewModel", "Error occurred while fetching photo details: ${e.message}")
+            } finally {
+                _isLoading.value = false // Turn off loading indicator after the network call completes
+            }
         }
     }
+
     fun deleteHistory(idUser: String) {
         viewModelScope.launch {
             try {

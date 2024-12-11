@@ -2,6 +2,7 @@ package com.example.eyecon.ui.history
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.Window
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +43,10 @@ class HistoryResultActivity : AppCompatActivity() {
 
         val id = intent.getStringExtra(EXTRA_ID) ?: ""
         detailViewModel.getDetailPhoto(id)
+
+        detailViewModel.isLoading.observe(this) { isLoading ->
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        }
 
         lifecycleScope.launch {
             detailViewModel.detailphoto.observeForever { result ->
